@@ -1,24 +1,3 @@
-/**
-* ─────────────────────────────────────────────────────────────────────────────────────────────────┐
-* Get, Upsert and Delete relevent sObject declared in the Lightning and Community Builder
-* ──────────────────────────────────────────────────────────────────────────────────────────────────
-* @author         Randy Grewal   <rgrewal@salesfore.com>
-* @modifiedBy     Randy Grewal   <rgrewal@salesfore.com>
-* @maintainedBy   Randy Grewal   <rgrewal@salesfore.com>
-* @version        1.1
-* @created        2017-05-01
-* @modified       2017-06-12
-* ──────────────────────────────────────────────────────────────────────────────────────────────────
-* @changes
-* v1.1            rgrewal@salesfore.com
-* 2017-06-08     	Added option to filter query by logged in user and removed System.debug logs
-* 2017-06-12		Security Review Fixes:
-*					Added isAccessible(), isCreateable(), isDeletable() for CRUD/FLS Enforcement fix
-*					Added Typecasting to all injected field API names for SOQL Injection fix
-*					Added "with sharing" keyword to Class for Sharing Violation Fix
-* ─────────────────────────────────────────────────────────────────────────────────────────────────┘
-*/
-
 public with sharing class AnyEventCalCtrl {
     @AuraEnabled
     public static List<EventObj> getEvents(String sObjectName, String titleField, String startDateTimeField, String endDateTimeField, String descriptionField, String contactNameField, String userField, Boolean filterByUserField){
